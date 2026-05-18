@@ -1,64 +1,66 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "vitepress-template",
-  description: "A starter template for VitePress",
+  title: '拾光文档馆',
+  description: '一个温柔、清爽、可直接使用的中文 VitePress 文档站。',
+  lang: 'zh-CN',
   srcDir: 'pages',
   outDir: 'dist',
   ignoreDeadLinks: true,
   cleanUrls: true,
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
+    logo: '/logo.svg',
     outline: {
-      level: [1, 3],    // 显示 h1 到 h3 级别的标题
+      label: '本页目录',
+      level: [2, 3]
     },
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Quick Start', link: '/quick-start/quick-start' },
-      { text: 'Examples', link: '/examples/markdown-examples' }
+      { text: '首页', link: '/' },
+      { text: '快速开始', link: '/quick-start/quick-start' },
+      { text: '写作示例', link: '/examples/markdown-examples' },
+      { text: '进阶玩法', link: '/advanced/custom-theme' }
     ],
-
     sidebar: [
       {
-        text: 'Quick Start',
-        collapsed: true,
+        text: '启程',
+        collapsed: false,
         items: [
-          { text: 'Overview', link: '/quick-start/quick-start' },
-          { text: 'Installation', link: '/quick-start/quick-start#installation' },
-          { text: 'Basic Setup', link: '/quick-start/quick-start#basic-setup' },
-          { text: 'Configuration', link: '/quick-start/quick-start#configuration' }
+          { text: '项目概览', link: '/quick-start/quick-start' },
+          { text: '安装与启动', link: '/quick-start/quick-start#安装与启动' },
+          { text: '页面写作', link: '/quick-start/quick-start#页面写作' },
+          { text: '发布上线', link: '/quick-start/quick-start#发布上线' }
         ]
       },
       {
-        text: 'Advanced',
-        collapsed: true,
+        text: '进阶玩法',
+        collapsed: false,
         items: [
-          { text: 'Custom Theme', link: '/advanced/custom-theme' },
-          { text: 'Markdown Extensions', link: '/advanced/markdown-extensions' },
-          { text: 'Code Highlighting', link: '/advanced/code-highlighting' }
+          { text: '定制主题', link: '/advanced/custom-theme' },
+          { text: 'Markdown 扩展', link: '/advanced/markdown-extensions' },
+          { text: '代码高亮', link: '/advanced/code-highlighting' }
         ]
       },
       {
-        text: 'Deployment',
-        collapsed: true,
+        text: '示例集',
+        collapsed: false,
         items: [
-          { text: 'Build for Production', link: '/quick-start/quick-start#build-for-production' },
-          { text: 'GitHub Pages', link: '/quick-start/quick-start#deploy-to-github-pages' },
-          { text: 'Netlify', link: '/quick-start/quick-start#netlify-deployment' }
-        ]
-      },
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/examples/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/examples/api-examples' }
+          { text: 'Markdown 示例', link: '/examples/markdown-examples' },
+          { text: '运行时 API', link: '/examples/api-examples' }
         ]
       }
     ],
-
+    search: {
+      provider: 'local'
+    },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/vitepress-template' }
-    ]
+      {
+        icon: 'github',
+        link: 'https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/vitepress-template'
+      }
+    ],
+    footer: {
+      message: '用 Markdown 写下清楚的想法。',
+      copyright: 'Copyright © 2026 拾光文档馆'
+    }
   }
 })

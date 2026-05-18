@@ -1,137 +1,95 @@
-# Quick Start
+# 项目概览
 
-This page demonstrates how to get started with VitePress and includes examples of nested navigation structure.
+欢迎来到「拾光文档馆」。这是一个已经整理好的 VitePress 中文文档模板，你可以把它当作项目主页、产品手册、团队知识库，或者一块安静记录想法的地方。
 
-## Getting Started
+它的目标很简单：少一点配置，多一点内容；少一点杂乱，多一点清楚。
 
-### Installation
+## 安装与启动
 
-First, install VitePress in your project:
-
-```bash
-npm install -D vitepress
-```
-
-### Basic Setup
-
-Create your first documentation page:
+进入项目后安装依赖：
 
 ```bash
-mkdir docs
-echo '# Hello VitePress' > docs/index.md
+npm install
 ```
 
-### Configuration
-
-Create a basic configuration file:
-
-```js
-// .vitepress/config.js
-import { defineConfig } from 'vitepress'
-
-export default defineConfig({
-  title: 'My Docs',
-  description: 'My documentation site'
-})
-```
-
-## Advanced Features
-
-### Custom Theme
-
-You can customize the theme by creating your own theme files:
-
-```js
-// .vitepress/theme/index.js
-import DefaultTheme from 'vitepress/theme'
-import './custom.css'
-
-export default DefaultTheme
-```
-
-### Markdown Extensions
-
-VitePress supports various markdown extensions:
-
-::: tip
-This is a tip box
-:::
-
-::: warning
-This is a warning box
-:::
-
-::: danger
-This is a danger box
-:::
-
-### Code Highlighting
-
-VitePress provides excellent syntax highlighting:
-
-```js
-function hello() {
-  console.log('Hello, VitePress!')
-}
-```
-
-```css
-.custom-style {
-  color: #42b883;
-  font-weight: bold;
-}
-```
-
-## Deployment
-
-### Build for Production
+启动本地预览：
 
 ```bash
-npm run docs:build
+npm run dev
 ```
 
-### Deploy to GitHub Pages
+构建静态站点：
 
-1. Push your code to GitHub
-2. Enable GitHub Pages in repository settings
-3. Set source to GitHub Actions
-4. Create deployment workflow
-
-### Netlify Deployment
-
-1. Connect your repository to Netlify
-2. Set build command: `npm run docs:build`
-3. Set publish directory: `docs/.vitepress/dist`
-
-## Best Practices
-
-### File Organization
-
-Organize your documentation with a clear structure:
-
-```
-docs/
-├── guide/
-│   ├── getting-started.md
-│   ├── installation.md
-│   └── configuration.md
-├── reference/
-│   ├── config.md
-│   └── theme.md
-└── index.md
+```bash
+npm run build
 ```
 
-### Navigation Structure
+预览构建结果：
 
-Use clear and logical navigation:
+```bash
+npm run preview
+```
 
-- Group related pages together
-- Use descriptive titles
-- Keep navigation depth reasonable (2-3 levels max)
+::: tip 小提示
+平时写文档时开着开发服务器即可，保存 Markdown 文件后页面会自动刷新。
+:::
 
-### Content Guidelines
+## 页面写作
 
-- Write clear, concise content
-- Use code examples where helpful
-- Include screenshots for complex features
-- Keep pages focused on a single topic 
+所有页面都放在 `pages` 目录下。你可以新增任意 Markdown 文件，然后在 `.vitepress/config.mts` 里把它加入导航或侧边栏。
+
+常见写法如下：
+
+```md
+# 页面标题
+
+用一两句话说明这个页面解决什么问题。
+
+## 小节标题
+
+- 写清背景
+- 给出步骤
+- 补充示例
+```
+
+## 推荐目录
+
+```text
+pages/
+├─ index.md
+├─ quick-start/
+│  └─ quick-start.md
+├─ advanced/
+│  ├─ custom-theme.md
+│  ├─ markdown-extensions.md
+│  └─ code-highlighting.md
+└─ examples/
+   ├─ markdown-examples.md
+   └─ api-examples.md
+```
+
+## 写作节奏
+
+### 先写结论
+
+读者打开文档时，最想知道的是「这页能帮我解决什么」。把结论放在前面，再展开细节。
+
+### 步骤要短
+
+一个步骤只做一件事。命令、配置、解释分开写，读起来会轻很多。
+
+### 示例要能复制
+
+代码块尽量完整，变量名保持真实，说明文字不要挡在关键步骤前面。
+
+## 发布上线
+
+构建完成后，`dist` 目录就是可以部署的静态文件。你可以把它放到任意静态托管平台，例如 EdgeOne Pages、GitHub Pages、Netlify 或 Vercel。
+
+::: warning 发布前检查
+上线前建议跑一次 `npm run build`，确认链接、代码块和 Markdown 语法没有问题。
+:::
+
+## 下一步
+
+继续阅读进阶页面，给站点换上自己的色彩、排版和示例内容。

@@ -1,228 +1,90 @@
-# Custom Theme
+# 定制主题
 
-Learn how to customize the VitePress theme to match your brand and design requirements.
+这个模板已经在默认主题上做了轻量美化。你可以继续调整颜色、字体、按钮、卡片和代码块，让站点更贴近自己的项目气质。
 
-## Theme Structure
+## 主题入口
 
-VitePress uses a theme system that allows you to customize the appearance and behavior of your documentation site. The default theme is located in `node_modules/vitepress/dist/client/theme-default/`.
+主题入口位于：
 
-## Creating a Custom Theme
-
-### Basic Theme Setup
-
-Create a theme directory structure:
-
-```
-.vitepress/
-├── theme/
-│   ├── index.ts
-│   ├── style.css
-│   └── components/
-│       └── CustomComponent.vue
-└── config.ts
+```text
+.vitepress/theme/index.ts
 ```
 
-### Theme Entry Point
-
-Create `.vitepress/theme/index.ts`:
+当前主题继承了 VitePress 默认主题，并加载了自定义样式：
 
 ```ts
-import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 
 export default {
-  ...DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
-      // Override slots here
-    })
-  },
-  enhanceApp({ app }) {
-    // Register custom components
-    // app.component('MyComponent', MyComponent)
-  }
+  extends: DefaultTheme
 }
 ```
 
-### Custom Styles
+## 样式文件
 
-Add your custom CSS in `.vitepress/theme/style.css`:
+主要视觉样式放在：
+
+```text
+.vitepress/theme/style.css
+```
+
+你可以在这里修改品牌色、按钮、首页、正文和侧边栏。
 
 ```css
 :root {
-  --vp-c-brand: #646cff;
-  --vp-c-brand-light: #747bff;
-  --vp-c-brand-dark: #535bf2;
-}
-
-/* Custom component styles */
-.custom-component {
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  padding: 16px;
-  margin: 16px 0;
+  --vp-c-brand-1: #0f766e;
+  --vp-c-brand-2: #0d9488;
+  --vp-c-brand-3: #14b8a6;
 }
 ```
 
-## Theme Customization Options
+## 视觉建议
 
-### Colors
+### 颜色保持克制
 
-You can customize the color scheme by overriding CSS variables:
+一个文档站最重要的是阅读体验。品牌色用来强调行动按钮和链接，正文区域保持干净，会更耐看。
 
-```css
-:root {
-  /* Primary brand color */
-  --vp-c-brand: #646cff;
-  --vp-c-brand-light: #747bff;
-  --vp-c-brand-dark: #535bf2;
-  
-  /* Background colors */
-  --vp-c-bg: #ffffff;
-  --vp-c-bg-alt: #f6f6f7;
-  
-  /* Text colors */
-  --vp-c-text-1: #213547;
-  --vp-c-text-2: #476582;
-  --vp-c-text-3: #8f9198;
-}
-```
+### 间距要稳定
 
-### Typography
+标题、段落、列表、代码块之间保持一致的距离，读者会更容易扫读。
 
-Customize fonts and typography:
+### 页面不要太满
 
-```css
-:root {
-  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --vp-font-family-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
-}
+能用表格讲清楚的，就不要堆大段文字；能用步骤表达的，就不要写成长段说明。
 
-/* Custom heading styles */
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-```
+## 自定义组件
 
-### Layout Customization
-
-Override layout components:
-
-```ts
-import { h } from 'vue'
-import DefaultTheme from 'vitepress/theme'
-import CustomLayout from './CustomLayout.vue'
-
-export default {
-  ...DefaultTheme,
-  Layout: () => h(CustomLayout)
-}
-```
-
-## Advanced Customization
-
-### Custom Components
-
-Create reusable components:
+如果需要更丰富的展示，可以在 `.vitepress/theme/components` 中创建 Vue 组件，再在主题入口注册。
 
 ```vue
-<!-- Example: .vitepress/theme/components/InfoBox.vue -->
 <template>
-  <div class="info-box" :class="type">
-    <div class="icon">{{ icon }}</div>
-    <div class="content">
-      <h4>{{ title }}</h4>
-      <p>{{ content }}</p>
-    </div>
-  </div>
+  <section class="note-panel">
+    <strong>{{ title }}</strong>
+    <p>{{ content }}</p>
+  </section>
 </template>
 
-<script setup>
-defineProps({
-  type: {
-    type: String,
-    default: 'info'
-  },
-  title: String,
-  content: String,
-  icon: String
-})
+<script setup lang="ts">
+defineProps<{
+  title: string
+  content: string
+}>()
 </script>
-
-<style scoped>
-.info-box {
-  display: flex;
-  padding: 16px;
-  border-radius: 8px;
-  margin: 16px 0;
-}
-
-.info-box.info {
-  background: #e3f2fd;
-  border: 1px solid #2196f3;
-}
-
-.info-box.warning {
-  background: #fff3e0;
-  border: 1px solid #ff9800;
-}
-</style>
 ```
 
-### Global Components
+## 适合加入的内容
 
-Register components globally:
+- 产品能力卡片
+- 常见问题折叠面板
+- 发布日志时间线
+- 文档状态标签
+- 团队规范说明
 
-```ts
-// .vitepress/theme/index.ts
-import InfoBox from './components/InfoBox.vue'
+## 检查清单
 
-export default {
-  ...DefaultTheme,
-  enhanceApp({ app }) {
-    app.component('InfoBox', InfoBox)
-  }
-}
-```
-
-## Best Practices
-
-### Performance
-
-- Keep custom CSS minimal and focused
-- Use CSS variables for consistent theming
-- Avoid heavy JavaScript in theme components
-
-### Accessibility
-
-- Maintain proper color contrast ratios
-- Ensure keyboard navigation works
-- Test with screen readers
-
-### Responsive Design
-
-- Test on different screen sizes
-- Use relative units (rem, em, %)
-- Implement mobile-first design
-
-## Examples
-
-Here's an example of how to use custom components in your theme:
-
-```js
-// In your Vue component
-<template>
-  <div class="custom-info-box">
-    <div class="icon">💡</div>
-    <div class="content">
-      <h4>Theme Customization</h4>
-      <p>VitePress themes are highly customizable and can be extended with Vue components.</p>
-    </div>
-  </div>
-</template>
-```
-
-This demonstrates how custom components can be integrated into your VitePress theme. 
+- [ ] 首页是否一眼看懂
+- [ ] 导航名称是否足够短
+- [ ] 移动端是否好读
+- [ ] 代码块是否完整
+- [ ] 重要链接是否有效

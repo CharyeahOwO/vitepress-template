@@ -1,81 +1,29 @@
-# VitePress 文档模板
+# 拾光文档馆
 
-一个简洁可定制的 VitePress 文档模板，具有良好的组织结构和现代化设计。
+这是一个中文 VitePress 文档站模板。内容已经换成中文，样式也做了轻量整理，可以直接作为知识库、项目文档或产品说明书继续扩展。
 
-## 部署
-部署到 EdgeOne Pages。
-
-[![EdgeOne Pages deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://console.cloud.tencent.com/edgeone/pages/new?template=vitepress-template)
-
-## 特性
-
-- 📚 结构良好的文档组织
-- 🎨 自定义主题和样式
-- 📱 响应式设计
-- 🔍 全文搜索
-- 📦 易于部署
-- 🚀 快速轻量
-
-## 目录结构
-
-```
-.
-├── .vitepress/          # VitePress 配置
-│   ├── config.mts       # 站点配置
-│   └── theme/           # 自定义主题文件
-│       └── style.css    # 自定义样式
-├── pages/              # 文档页面
-│   ├── index.md        # 首页
-│   ├── quick-start/    # 快速开始指南
-│   ├── advanced/       # 进阶主题
-│   ├── deployment/     # 部署指南
-│   └── examples/       # 示例
-├── dist/               # 构建输出目录
-├── package.json        # 项目依赖
-├── edgeone.json        # 项目部署参数
-└── .gitignore         # Git 忽略规则
-```
-
-## 快速开始
-
-1. **安装**
+## 运行
 
 ```bash
-# 克隆仓库
-git clone [your-repo-url]
-
-# 安装依赖
 npm install
-```
-
-2. **开发**
-
-```bash
-# 启动本地开发服务器
 npm run dev
 ```
 
-3. **构建**
+## 构建
 
 ```bash
-# 构建生产版本
 npm run build
 ```
 
-4. **预览**
+## 预览
 
 ```bash
-# 预览生产构建
 npm run preview
 ```
 
-## 文档结构
+## 你可以继续改什么
 
-- **快速开始**: 基础设置和配置指南
-- **进阶**: 深入主题和自定义设置
-- **示例**: Markdown 和 API 使用示例
-- **部署**: 各种平台的部署指南
-
-## 贡献
-
-欢迎贡献！请随时提交 Pull Request。
+- 在 `pages` 目录里新增页面
+- 在 `.vitepress/config.mts` 里调整导航和侧边栏
+- 在 `.vitepress/theme/style.css` 里调整颜色、按钮和版式
+- 把示例内容替换成自己的业务文档

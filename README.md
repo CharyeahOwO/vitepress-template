@@ -1,81 +1,51 @@
-# VitePress Documentation Template
+# 拾光文档馆
 
-A clean and customizable VitePress documentation template with a well-organized structure and modern design.
+一个已经中文化并轻量美化的 VitePress 文档模板，适合项目说明、产品手册、团队知识库和个人笔记站。
 
-## Deploy
-Deploy with EdgeOne Pages.
+## 特点
 
-[![EdgeOne Pages deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?template=vitepress-template)
+- 中文导航、中文首页、中文示例内容
+- 清爽的主题色和更柔和的阅读节奏
+- 支持本地搜索、侧边栏、目录和提示块
+- 保留 VitePress 的标准开发、构建和预览命令
 
-## Features
-
-- 📚 Well-organized documentation structure
-- 🎨 Customized theme and styling
-- 📱 Responsive design
-- 🔍 Full-text search
-- 📦 Easy to deploy
-- 🚀 Fast and lightweight
-
-## Directory Structure
-
-```
-.
-├── .vitepress/          # VitePress configuration
-│   ├── config.mts       # Site configuration
-│   └── theme/           # Custom theme files
-│       └── style.css    # Custom styles
-├── pages/              # Documentation pages
-│   ├── index.md        # Home page
-│   ├── quick-start/    # Quick start guide
-│   ├── advanced/       # Advanced topics
-│   ├── deployment/     # Deployment guides
-│   └── examples/       # Examples
-├── dist/               # Build output directory
-├── package.json        # Project dependencies
-├── edgeone.json        # Project deployment parameters
-└── .gitignore         # Git ignore rules
-```
-
-## Getting Started
-
-1. **Installation**
+## 开始使用
 
 ```bash
-# Clone the repository
-git clone [your-repo-url]
-
-# Install dependencies
 npm install
-```
-
-2. **Development**
-
-```bash
-# Start local development server
 npm run dev
 ```
 
-3. **Build**
+构建生产版本：
 
 ```bash
-# Build for production
 npm run build
 ```
 
-4. **Preview**
+预览构建结果：
 
 ```bash
-# Preview production build
 npm run preview
 ```
 
-## Documentation Structure
+## 目录结构
 
-- **Quick Start**: Basic setup and configuration guide
-- **Advanced**: In-depth topics and customization
-- **Examples**: Markdown and API usage examples
-- **Deployment**: Deployment guides for various platforms
+```text
+.
+├─ .vitepress/
+│  ├─ config.mts
+│  └─ theme/
+│     ├─ index.ts
+│     └─ style.css
+├─ pages/
+│  ├─ index.md
+│  ├─ quick-start/
+│  ├─ advanced/
+│  └─ examples/
+├─ package.json
+└─ edgeone.json
+```
 
-## Contributing
+## 写作建议
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+先把读者要完成的目标写清楚，再给出步骤、代码和注意事项。页面标题保持短，侧边栏名称保持稳定，文档会更容易长期维护。

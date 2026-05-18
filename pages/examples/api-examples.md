@@ -2,29 +2,22 @@
 outline: deep
 ---
 
-# Runtime API Examples
+# 运行时 API 示例
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+VitePress 提供了运行时 API，可以在 Markdown 或 Vue 组件中读取站点、主题、页面和 frontmatter 数据。
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+下面这个示例会在页面中输出当前站点数据，适合调试主题配置或确认页面元信息。
 
 ```md
 <script setup>
 import { useData } from 'vitepress'
 
-const { theme, page, frontmatter } = useData()
+const { site, theme, page, frontmatter } = useData()
 </script>
 
-## Results
+## 当前页面
 
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
 <pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
 ```
 
 <script setup>
@@ -33,17 +26,22 @@ import { useData } from 'vitepress'
 const { site, theme, page, frontmatter } = useData()
 </script>
 
-## Results
+## 当前站点
 
-### Theme Data
+<pre>{{ site }}</pre>
+
+## 主题配置
+
 <pre>{{ theme }}</pre>
 
-### Page Data
+## 页面数据
+
 <pre>{{ page }}</pre>
 
-### Page Frontmatter
+## Frontmatter
+
 <pre>{{ frontmatter }}</pre>
 
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+::: tip 使用建议
+如果只是写普通文档，不需要碰运行时 API。只有在做自定义组件、主题扩展或动态展示时再使用它。
+:::
