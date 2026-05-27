@@ -1,37 +1,19 @@
-# 技术栈碎片
+# 技术栈全景图
 
-这页不是严肃技术栈清单，只是把慕棱经常碰的东西放在一起。
+这里展示的是构成慕棱当前赛博架构的核心组件。这不是在晒技能点，而是在盘点“哪些东西曾经让我坐牢”。
 
-## 服务器与部署
+## 基础设施层
+- **Linux (Arch / Debian)**：所有的梦开始的地方，也是所有的 `Kernel Panic` 发生的地方。
+- **Docker & Compose**：隔离了环境，但也制造了无数次网络挂载冲突的迷宫。
+- **Tailscale**：让内网穿透变得优雅，也让“为什么连不上”变得更加玄学。
 
-- Docker
-- 1Panel / DPanel
-- Nginx / 反向代理
-- EdgeOne / Cloudflare
-- Tailscale
-- Linux 主机
+## Web 与代理层
+- **Nginx / 1Panel**：反向代理的爹，配置写错一个分号就能让全站瘫痪的神奇软件。
+- **EdgeOne / Cloudflare**：防 DDOS、做 CDN 的神器，同时也是阻碍你自己访问后台的头号嫌疑人。
 
-## AI 与模型入口
+## AI 与应用层
+- **NewAPI (洛音云枢魔改版)**：万物互联的模型枢纽。
+- **OpenClaw**：Miya 的本体栖息地，一个能直接在主机上撒野的硬核 Agent 框架。
+- **WordPress / Memos**：虽然老，虽然臃肿，但扛造。
 
-- New API
-- OpenClaw
-- Claude Code
-- Codex 类工具
-- Gemini / Claude / OpenAI 兼容接口
-- 模型网关与渠道管理
-
-## 站点
-
-- WordPress
-- Memos
-- VitePress
-- EdgeOne Pages
-- 静态站点和博客美化
-
-## 风格偏好
-
-- 页面要能用，也要好看；
-- 配置要完整，不要只给片段；
-- 文案别太官方；
-- 能说人话就不要写成八股文；
-- 折腾可以复杂，但最终体验要清楚。
+**备注**：以上技术栈的熟练程度与踩坑次数成正比。

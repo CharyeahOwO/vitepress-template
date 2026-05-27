@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: '慕棱的文档馆',
-  description: '关于慕棱、洛音云枢、拾光物语和一些折腾记录。',
+  title: '云端自留地',
+  description: '一份看着像正经文档，实际上满纸吐槽的赛博存活指南。',
   lang: 'zh-CN',
   srcDir: 'pages',
   outDir: 'dist',
@@ -16,35 +16,35 @@ export default defineConfig({
     },
     nav: [
       { text: '首页', link: '/' },
-      { text: '关于慕棱', link: '/about/muling' },
-      { text: '项目', link: '/projects/luoyin-yunshu' },
-      { text: '记录', link: '/notes/archive' }
+      { text: '关于', link: '/about/muling' },
+      { text: '核心设施', link: '/projects/luoyin-yunshu' },
+      { text: '避坑指南', link: '/guide/survival' }
     ],
     sidebar: [
       {
-        text: '关于',
+        text: '档案室',
         collapsed: false,
         items: [
-          { text: '关于慕棱', link: '/about/muling' },
-          { text: '这里是什么', link: '/about/site' }
+          { text: '研究对象：慕棱', link: '/about/muling' },
+          { text: '关于本站', link: '/about/site' }
         ]
       },
       {
-        text: '项目',
+        text: '核心基础设施',
         collapsed: false,
         items: [
-          { text: '洛音云枢', link: '/projects/luoyin-yunshu' },
-          { text: '拾光物语', link: '/projects/shiguang' },
-          { text: 'OpenClaw 与 Miya', link: '/projects/openclaw-miya' }
+          { text: '洛音云枢 (API Gateway)', link: '/projects/luoyin-yunshu' },
+          { text: 'OpenClaw 与 Miya', link: '/projects/openclaw-miya' },
+          { text: '拾光物语 (Blog)', link: '/projects/shiguang' }
         ]
       },
       {
-        text: '记录',
+        text: '操作手册（伪）',
         collapsed: false,
         items: [
-          { text: '折腾索引', link: '/notes/archive' },
-          { text: '技术栈碎片', link: '/notes/stack' },
-          { text: '更新日志', link: '/notes/changelog' }
+          { text: '赛博生存指南', link: '/guide/survival' },
+          { text: '技术栈全景图', link: '/notes/stack' },
+          { text: '事故与更新日志', link: '/notes/changelog' }
         ]
       }
     ],
@@ -58,8 +58,8 @@ export default defineConfig({
       }
     ],
     footer: {
-      message: '记录折腾，也记录一点人间。',
-      copyright: 'Copyright © 2026 慕棱'
+      message: '代码可以写得烂，但态度必须嚣张。',
+      copyright: 'Copyright © 2026 慕棱 & Miya'
     }
   }
 })
