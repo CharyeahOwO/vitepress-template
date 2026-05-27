@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: '拾光文档馆',
-  description: '一个温柔、清爽、可直接使用的中文 VitePress 文档站。',
+  title: 'New API 文档',
+  description: 'New API 统一模型网关的部署、接入与使用文档。',
   lang: 'zh-CN',
   srcDir: 'pages',
   outDir: 'dist',
@@ -16,36 +16,45 @@ export default defineConfig({
     },
     nav: [
       { text: '首页', link: '/' },
-      { text: '快速开始', link: '/quick-start/quick-start' },
-      { text: '写作示例', link: '/examples/markdown-examples' },
-      { text: '进阶玩法', link: '/advanced/custom-theme' }
+      { text: '快速开始', link: '/guide/what-is-new-api' },
+      { text: '部署', link: '/deploy/docker' },
+      { text: '使用', link: '/usage/token-and-models' },
+      { text: '排障', link: '/troubleshooting/common-issues' }
     ],
     sidebar: [
       {
-        text: '启程',
+        text: '开始之前',
         collapsed: false,
         items: [
-          { text: '项目概览', link: '/quick-start/quick-start' },
-          { text: '安装与启动', link: '/quick-start/quick-start#安装与启动' },
-          { text: '页面写作', link: '/quick-start/quick-start#页面写作' },
-          { text: '发布上线', link: '/quick-start/quick-start#发布上线' }
+          { text: '什么是 New API', link: '/guide/what-is-new-api' },
+          { text: '核心概念', link: '/guide/concepts' },
+          { text: '推荐使用流程', link: '/guide/workflow' }
         ]
       },
       {
-        text: '进阶玩法',
+        text: '部署与维护',
         collapsed: false,
         items: [
-          { text: '定制主题', link: '/advanced/custom-theme' },
-          { text: 'Markdown 扩展', link: '/advanced/markdown-extensions' },
-          { text: '代码高亮', link: '/advanced/code-highlighting' }
+          { text: 'Docker 部署', link: '/deploy/docker' },
+          { text: '环境变量', link: '/deploy/env' },
+          { text: '升级与备份', link: '/deploy/upgrade' }
         ]
       },
       {
-        text: '示例集',
+        text: '日常使用',
         collapsed: false,
         items: [
-          { text: 'Markdown 示例', link: '/examples/markdown-examples' },
-          { text: '运行时 API', link: '/examples/api-examples' }
+          { text: '令牌与模型', link: '/usage/token-and-models' },
+          { text: '渠道配置', link: '/usage/channels' },
+          { text: '客户端接入', link: '/usage/clients' }
+        ]
+      },
+      {
+        text: '排障',
+        collapsed: false,
+        items: [
+          { text: '常见问题', link: '/troubleshooting/common-issues' },
+          { text: '日志与请求排查', link: '/troubleshooting/logs' }
         ]
       }
     ],
@@ -55,12 +64,12 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/TencentEdgeOne/pages-templates/tree/main/examples/vitepress-template'
+        link: 'https://github.com/QuantumNous/new-api'
       }
     ],
     footer: {
-      message: '用 Markdown 写下清楚的想法。',
-      copyright: 'Copyright © 2026 拾光文档馆'
+      message: 'New API 是开源统一模型网关，请根据自身业务场景合理部署和使用。',
+      copyright: 'Copyright © 2026 New API Docs'
     }
   }
 })

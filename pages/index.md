@@ -2,25 +2,24 @@
 layout: home
 
 hero:
-  name: '拾光文档馆'
-  text: '把零散想法整理成漂亮中文文档'
-  tagline: '适合项目说明、知识库、产品手册和团队沉淀。开箱即写，清爽耐看。'
+  name: 'New API 文档'
+  text: '统一管理你的模型接口'
+  tagline: '面向个人、团队与开发者的 AI 模型网关文档：从部署、渠道配置到客户端接入，把常见操作整理成能直接照着走的说明。'
   actions:
     - theme: brand
-      text: 开始写文档
-      link: /quick-start/quick-start
+      text: 快速了解
+      link: /guide/what-is-new-api
     - theme: alt
-      text: 看看示例
-      link: /examples/markdown-examples
+      text: Docker 部署
+      link: /deploy/docker
 
 features:
-  - title: 中文优先
-    details: 导航、目录、示例和说明都已换成中文表达，打开就能直接继续写。
-  - title: 结构清楚
-    details: 从快速开始到进阶主题，内容层次稳定，适合后续扩展成完整知识库。
-  - title: 视觉轻盈
-    details: 调整了色彩、按钮、卡片和正文节奏，让默认主题更有质感。
-  - title: 易于发布
-    details: 保留 VitePress 的构建方式，运行、预览、部署都保持简单。
+  - title: 统一入口
+    details: 通过 OpenAI 兼容接口聚合多种模型服务，客户端只需要配置一个 Base URL 和令牌。
+  - title: 渠道管理
+    details: 支持按渠道维护上游接口、模型映射、优先级、分组和可用性，适合多模型环境。
+  - title: 令牌与额度
+    details: 可以为不同用户或应用创建独立令牌，配合分组、额度和日志进行日常管理。
+  - title: 易于接入
+    details: 兼容常见客户端、Agent 框架和开发工具，适合用作个人或团队的模型访问层。
 ---
-
