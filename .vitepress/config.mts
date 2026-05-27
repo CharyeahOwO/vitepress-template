@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'New API 文档',
-  description: 'New API 统一模型网关的部署、接入与使用文档。',
+  title: '慕棱的文档馆',
+  description: '关于慕棱、洛音云枢、拾光物语和一些折腾记录。',
   lang: 'zh-CN',
   srcDir: 'pages',
   outDir: 'dist',
@@ -16,45 +16,35 @@ export default defineConfig({
     },
     nav: [
       { text: '首页', link: '/' },
-      { text: '快速开始', link: '/guide/what-is-new-api' },
-      { text: '部署', link: '/deploy/docker' },
-      { text: '使用', link: '/usage/token-and-models' },
-      { text: '排障', link: '/troubleshooting/common-issues' }
+      { text: '关于慕棱', link: '/about/muling' },
+      { text: '项目', link: '/projects/luoyin-yunshu' },
+      { text: '记录', link: '/notes/archive' }
     ],
     sidebar: [
       {
-        text: '开始之前',
+        text: '关于',
         collapsed: false,
         items: [
-          { text: '什么是 New API', link: '/guide/what-is-new-api' },
-          { text: '核心概念', link: '/guide/concepts' },
-          { text: '推荐使用流程', link: '/guide/workflow' }
+          { text: '关于慕棱', link: '/about/muling' },
+          { text: '这里是什么', link: '/about/site' }
         ]
       },
       {
-        text: '部署与维护',
+        text: '项目',
         collapsed: false,
         items: [
-          { text: 'Docker 部署', link: '/deploy/docker' },
-          { text: '环境变量', link: '/deploy/env' },
-          { text: '升级与备份', link: '/deploy/upgrade' }
+          { text: '洛音云枢', link: '/projects/luoyin-yunshu' },
+          { text: '拾光物语', link: '/projects/shiguang' },
+          { text: 'OpenClaw 与 Miya', link: '/projects/openclaw-miya' }
         ]
       },
       {
-        text: '日常使用',
+        text: '记录',
         collapsed: false,
         items: [
-          { text: '令牌与模型', link: '/usage/token-and-models' },
-          { text: '渠道配置', link: '/usage/channels' },
-          { text: '客户端接入', link: '/usage/clients' }
-        ]
-      },
-      {
-        text: '排障',
-        collapsed: false,
-        items: [
-          { text: '常见问题', link: '/troubleshooting/common-issues' },
-          { text: '日志与请求排查', link: '/troubleshooting/logs' }
+          { text: '折腾索引', link: '/notes/archive' },
+          { text: '技术栈碎片', link: '/notes/stack' },
+          { text: '更新日志', link: '/notes/changelog' }
         ]
       }
     ],
@@ -64,12 +54,12 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/QuantumNous/new-api'
+        link: 'https://github.com/CharyeahOwO'
       }
     ],
     footer: {
-      message: 'New API 是开源统一模型网关，请根据自身业务场景合理部署和使用。',
-      copyright: 'Copyright © 2026 New API Docs'
+      message: '记录折腾，也记录一点人间。',
+      copyright: 'Copyright © 2026 慕棱'
     }
   }
 })

@@ -2,24 +2,24 @@
 layout: home
 
 hero:
-  name: 'New API 文档'
-  text: '统一管理你的模型接口'
-  tagline: '面向个人、团队与开发者的 AI 模型网关文档：从部署、渠道配置到客户端接入，把常见操作整理成能直接照着走的说明。'
+  name: '慕棱的文档馆'
+  text: '折腾、存档，以及一些还没想好怎么命名的东西'
+  tagline: '这里不是一本严肃说明书，更像一个把项目、想法、记录和个人痕迹放在一起的小房间。'
   actions:
     - theme: brand
-      text: 快速了解
-      link: /guide/what-is-new-api
+      text: 关于慕棱
+      link: /about/muling
     - theme: alt
-      text: Docker 部署
-      link: /deploy/docker
+      text: 看看项目
+      link: /projects/luoyin-yunshu
 
 features:
-  - title: 统一入口
-    details: 通过 OpenAI 兼容接口聚合多种模型服务，客户端只需要配置一个 Base URL 和令牌。
-  - title: 渠道管理
-    details: 支持按渠道维护上游接口、模型映射、优先级、分组和可用性，适合多模型环境。
-  - title: 令牌与额度
-    details: 可以为不同用户或应用创建独立令牌，配合分组、额度和日志进行日常管理。
-  - title: 易于接入
-    details: 兼容常见客户端、Agent 框架和开发工具，适合用作个人或团队的模型访问层。
+  - title: 折腾记录
+    details: 服务器、Docker、NewAPI、OpenClaw、反代、模型接口，很多东西不是为了商业化，只是想把它们真的跑起来。
+  - title: 洛音云枢
+    details: 基于 New API 改造出的个人模型网关前端，带一点洛天依和二次元风格，也带一点自己的审美执念。
+  - title: 拾光物语
+    details: 博客不是简历，也不是教程仓库。它更像给一段段时间留下的存档点。
+  - title: Miya
+    details: 一个长期陪在慕棱旁边的个人数字搭档，嘴上可以吐槽，手上必须兜底。
 ---
